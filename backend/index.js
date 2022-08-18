@@ -36,7 +36,7 @@ async function main() {
   });
 
   app.get("/oi", function (req, res) {
-    res.send("Olá, mundo!");
+    res.send("Bem vindo ;)");
   });
 
   
