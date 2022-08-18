@@ -1,8 +1,7 @@
 const express = require("express");
 const { MongoClient } = require("mongodb");
 
-const url = "mongodb://localhost:27017";
-// const url = "mongodb+srv://admin:LdQHrR3iAM9u4Mtw@cluster0.ih1f4.mongodb.net";
+const url = "mongodb+srv://oGostosa0forAll:b4WtJ9u5Q6uSi6ug@cluster0.vmex8u2.mongodb.net";
 const dbName = "jornada-fullstack-agosto-22";
 
 // Declaração da função main()
@@ -17,11 +16,11 @@ async function main() {
 
   console.log("Conectando com o banco de dados...");
 
-  /* 
+  
   const client = await MongoClient.connect(url);
   const db = client.db(dbName);
   const collection = db.collection("pontuacoes"); 
-  */
+ 
 
   console.log("Banco de dados conectado com sucesso!");
 
@@ -39,7 +38,7 @@ async function main() {
     res.send("Bem vindo ;)");
   });
 
-  
+
   // Endpoint READ ALL - [GET] /pontuacoes
   app.get("/pontuacoes", async function (req, res) {
     const itens = await collection
@@ -62,7 +61,7 @@ async function main() {
     res.send(item);
   });
 
-  //
+  //process.env.PORT é da sessão do heroku
   app.listen(process.env.PORT || 3000);
 }
 
